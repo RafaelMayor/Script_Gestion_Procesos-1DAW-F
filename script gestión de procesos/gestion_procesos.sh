@@ -5,7 +5,7 @@
 # Nombre: gestion_procesos.sh
 # Autor: Rafael Martín Mayor <rmarmay2004@gmail.com>
 #
-# Objetivo: Gestionado de procesos
+# Objetivo: Gestionado de procesos.
 #
 # Entradas: Máximo uso de CPU y memoria.
 # Salidas: Gestionado de procesos.
