@@ -3,7 +3,7 @@
 ################################
 #
 # Nombre: gestion_procesos.sh
-# Autor: Rafael Martín Mayor <rmarmay2004@gmail.com>
+# Autores: Marina Giacomaniello Castro <mdiogcasko@gmail.com> y Rafael Martín Mayor <rmarmay2004@gmail.com>
 #
 # Objetivo: Gestionado de procesos.
 #
