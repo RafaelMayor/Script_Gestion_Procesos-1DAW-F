@@ -11,7 +11,7 @@
 # Salidas: Gestionado de procesos.
 #
 # Historial:
-#   2024-02-12: versión final
+#   2024-02-19: versión final
 #
 ################################
 
@@ -24,13 +24,13 @@ if [ "$#" -ne 2 ]; then
 fi
 
 # Verificar que ambos valores sean mayores o iguales a 0
-if [ "$1" -lt 0 ] || [ "$2" -lt 0 ]; then
+if [ "$(echo "$1 >= 0" | bc -l)" -eq 0 ] || [ "$(echo "$2 >= 0" | bc -l)" -eq 0 ]; then
   echo "Error: Ambos valores deben ser mayores o iguales a 0."
   exit 200
 fi
 
 # Verificar que maxMem sea menor o igual a 100
-if [ "$2" -gt 100 ]; then
+if [ "$(echo "$2 > 100" | bc -l)" -eq 1 ]; then
   echo "Error: maxMem debe ser menor o igual a 100."
   exit 150
 fi
@@ -74,7 +74,7 @@ while true; do
   mem_percentage=$(ps -eo pid,%mem,comm --sort=-%mem | awk 'NR==2 {print $2}')
 
   # Verificar si algún proceso supera los límites
-  if [ "$cpu_percentage" -gt "$1" ] || [ "$mem_percentage" -gt "$2" ]; then
+  if [ "$(echo "$cpu_percentage > $1" | bc -l)" -eq 1 ] || [ "$(echo "$mem_percentage > $2" | bc -l)" -eq 1 ]; then
     echo "Proceso que supera los límites:"
     ps -p $max_cpu_process -o pid,%cpu,%mem,comm
     echo "Opciones:"
