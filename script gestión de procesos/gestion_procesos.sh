@@ -18,7 +18,7 @@
 
 # Verificar la cantidad de argumentos
 if [ "$#" -ne 2 ]; then
-  echo "Error: Se deben proporcionar dos argumentos."
+  echo "Error: Se deben poner dos argumentos."
   echo "Uso: $0 <maxCPU> <maxMem>"
   exit 100
 fi
